@@ -9,6 +9,12 @@ an instance of the Mosaic class.
 Written by Richard Quayson, 2024.
 """
 
+import sys
+import os
+
+# adding the project root directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import turtle
 import random
 from sample_images.m3.m3 import M3_COLOUR_LIST
