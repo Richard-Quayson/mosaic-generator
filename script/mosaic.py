@@ -212,12 +212,3 @@ class Mosaic:
             self.draw_square(
                 self.BORDER_BOTTOM_X, self.BORDER_BOTTOM_Y + row * self.ROW_HEIGHT, row
             )
-
-
-if __name__ == "__main__":
-    mosaic = Mosaic(num_rows=90, num_columns=60, colour_list=M3_COLOUR_LIST)
-    mosaic.turtle.speed(0)
-    mosaic.draw_grid_border()
-    mosaic.draw_squares()
-    mosaic.turtle.hideturtle()
-    turtle.done()
