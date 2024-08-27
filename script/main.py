@@ -18,3 +18,9 @@ def main(filepath: str, dimension: int) -> None:
     create_mosaic(colour_list)
 
     print("Done generating mosaic😊!")
+
+
+if __name__ == "__main__":
+    filepath = "sample_images/rq/rq.pdf"
+    dimension = 7
+    main(filepath=filepath, dimension=dimension)
