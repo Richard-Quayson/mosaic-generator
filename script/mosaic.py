@@ -91,7 +91,10 @@ class Mosaic:
         self.turtle.setheading(0)
 
     def draw_grid_border(self):
-        """Draws the border of the grid."""
+        """Draws the border of the grid.
+
+        Not being used in current test script due to hard-coded width adjustment.
+        """
 
         self.turtle.penup()
         self.turtle.goto(-Mosaic.WIDTH // 2, Mosaic.HEIGHT // 2)
