@@ -10,9 +10,9 @@ def create_mosaic(colour_list: list[list]) -> None:
     mosaic.turtle.done()
 
 
-def main(filepath: str) -> None:
+def main(filepath: str, dimension: int) -> None:
     # generate colour list
-    colour_list = generate_colour_list(file_path=filepath)
+    colour_list = generate_colour_list(file_path=filepath, dimension=dimension)
 
     # generate mosaic
     create_mosaic(colour_list)
