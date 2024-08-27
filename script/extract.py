@@ -230,12 +230,12 @@ def create_colour_list_file(colour_list: list, file_path: str) -> str:
     return output_filepath
 
 
-def main(file_path: str) -> None:
+def main(file_path: str, dimension: int) -> None:
     # extract mosaic colours from pdf
-    extracted_text = extract_text("sample_images/rq/rq.pdf")
+    extracted_text = extract_text(file_path)
 
     # construct colour list from extracted text
-    colour_list = extract_colour_list(extracted_text, 7)
+    colour_list = extract_colour_list(extracted_text, dimension)
 
     # create colour list .py file
     colour_list_file = create_colour_list_file(colour_list, file_path)
