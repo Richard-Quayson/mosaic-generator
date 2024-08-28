@@ -60,12 +60,8 @@ class Mosaic:
         "O": "#FF9900",
     }
 
-    def __init__(self, num_rows, num_columns, colour_list=None):
+    def __init__(self, colour_list=None):
         """Initializes a new Mosaic instance.
-
-        Args:
-            num_rows (int): The number of rows in the grid.
-            num_columns (int): The number of columns in the grid.
 
         Optional Args:
             colour_list (list): A 2D list of colours to fill the squares with.
@@ -74,8 +70,8 @@ class Mosaic:
         If colour_list is not provided, the squares will be filled with random colours.
         """
 
-        self.rows = num_rows
-        self.columns = num_columns
+        self.rows = len(colour_list)
+        self.columns = len(colour_list[0])
         self.ROW_HEIGHT = Mosaic.HEIGHT / self.rows
         self.COLUMN_WIDTH = Mosaic.WIDTH / self.columns
         self.colour_list = colour_list
