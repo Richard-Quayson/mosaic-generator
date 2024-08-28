@@ -28,11 +28,6 @@ def extract_text(filepath: str):
         page = pdf_document.load_page(page_num)
         extracted_text += page.get_text()
 
-    # write extracted text to a file
-    output_filepath = filepath.replace(".pdf", ".txt")
-    with open(output_filepath, "w") as output_file:
-        output_file.write(extracted_text)
-
     return extracted_text
 
 
