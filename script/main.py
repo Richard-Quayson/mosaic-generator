@@ -5,6 +5,16 @@ import os
 
 
 def create_mosaic(colour_list: list[list]) -> None:
+    """
+    Creates a mosaic using the given colour list
+
+    Args:
+        - colour_list (list[list]): the colour list to use for the mosaic
+
+    Returns:
+        - None
+    """
+
     mosaic = Mosaic(colour_list=colour_list)
     mosaic.turtle.speed(0)
     mosaic.draw_squares()
@@ -12,6 +22,17 @@ def create_mosaic(colour_list: list[list]) -> None:
 
 
 def main(filepath: str, dimension: int) -> None:
+    """
+    Generates a mosaic from a PDF file
+
+    Args:
+        - filepath (str): the path to the PDF file
+        - dimension (int): the dimension of the rubix cube, eg. 3 for 3x3x3, 4 for 4x4x4, etc.
+    
+    Returns:
+        - None
+    """
+    
     # generate colour list and get the path to the generated Python file and the variable name
     colour_list_path, colour_list_variable = generate_colour_list(file_path=filepath, dimension=dimension)
 
