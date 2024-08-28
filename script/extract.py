@@ -202,7 +202,7 @@ def extract_colour_list(extracted_text: str, dimension: int = 3):
     return colour_list
 
 
-def create_colour_list_file(colour_list: list, file_path: str) -> str:
+def create_colour_list_file(colour_list: list, file_path: str) -> tuple[str, str]:
     """
     Creates a colour list file from the extracted colour list
 
@@ -211,7 +211,7 @@ def create_colour_list_file(colour_list: list, file_path: str) -> str:
         - file_path (str): the path to the PDF file
 
     Returns:
-        - output_filepath (str): the path to the created .py colour list file
+        - tuple: the path to the created .py colour list file and the variable name
     """
 
     output_filepath = file_path.replace(".pdf", ".py")
@@ -227,10 +227,10 @@ def create_colour_list_file(colour_list: list, file_path: str) -> str:
             output_file.write(f"    {colour_list[row_num]},\n")
         output_file.write("]\n")
 
-    return output_filepath
+    return output_filepath, variable_name
 
 
-def main(file_path: str, dimension: int) -> str:
+def main(file_path: str, dimension: int) -> tuple[str, str]:
     """
     Extracts the colour list from a PDF file
 
@@ -239,7 +239,7 @@ def main(file_path: str, dimension: int) -> str:
         - dimension (int): the dimension of the rubix cube, eg. 3 for 3x3x3, 4 for 4x4x4, etc.
 
     Returns:
-        - str: the path to the created .py colour list file
+        - tuple: the path to the created .py colour list file and the variable name
     """
 
     # extract mosaic colours from pdf
@@ -249,7 +249,7 @@ def main(file_path: str, dimension: int) -> str:
     colour_list = extract_colour_list(extracted_text, dimension)
 
     # create colour list .py file
-    colour_list_file = create_colour_list_file(colour_list, file_path)
+    colour_list_file, colour_list_name = create_colour_list_file(colour_list, file_path)
 
     # return the colour list file
-    return colour_list_file
+    return colour_list_file, colour_list_name
