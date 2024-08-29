@@ -17,7 +17,6 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import turtle
 import random
-from sample_images.m3.m3 import M3_COLOUR_LIST
 
 
 class Mosaic:
